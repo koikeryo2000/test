@@ -1,0 +1,149 @@
+,usr_info.user_id
+,cart_info.user_id
+,purchase_history_info.user_id
+
+destination_info.user_id
+
+
+予定
+close文追加
+email ユニーク化
+商品購入履歴を個別に削除できるようにする
+商品購入履歴のデリート後の参照がおかしい
+カンマを商品詳細でも対応する
+商品追加
+
+//大文字小文字csできなかった
+
+
+
+
+COLLATE utf8_unicode_ci
+
+SELECT * FROM user_info where email = "test@test.com" COLLATE utf8_bin;
+
+  AND password = "testpass"
+
+
+///////////////////////////////////////////////
+
+userCreateConfirm.jsp 3箇所
+userCreate.jsp 2
+login 3
+home 1
+
+test@test.com
+
+destinationCreate.jsp メールアドレスラン消去
+destinationComfirm.jsp メールアドレスラン消去
+
+SELECT family_name,first_name,family_name_kana,first_name_kana,sex,email FROM user_info WHERE email = "test@test.com" AND password = "testpass"
+/////////////////////////////////////////////////
+ AND password = ?
+,String password
+,session.get("password").toString()
+
+LoginDTO emailtuika 
+ResetUserPass loginId → email
+GoCart userId → email
+
+user_info emailの位置とnot null unique;
+
+email validation設定
+パスワード再設定機能改修
+（idでしか判定していない、email,ユーザー情報を3つはほしい
+未ログインとログインで入力項目を変える、）
+
+完了//emailに変更
+//LoginMoveAction
+LoginAction
+LoginDAO
+LoginDTO
+
+Validation
+
+UserInfoDAO
+UserCreateConfirmAction・・id passで判定
+
+CartMoveAction
+
+CartDAO ..emailのみで判定多し
+	//大文字小文字区別できるならできればやっておきたい
+	getCartInfo(String email)
+	checkedItemDelete(String email,int id)
+	deleteCartInfo(String email)
+Destination系
+	//DesのDBも変えるuserIdいらないけどのこす
+	//emailの登録ランはいらないjsp影響あり
+	//userIdもいらない
+	//大文字小文字区別できるならできればやっておきたい
+DestinationDAO
+//obtainingDestinationInfo(String email)
+//DestinationDTO変更しない
+DestinationConfirmAction
+//email入力欄消去getsetvalなし
+DestinationCompleteAction
+//sessionからemail取得
+
+MyPageAction
+PurchaseHistory系
+UserCreate系//変更点なし
+ResetPass系//作り直しすべき
+Product//影響なし
+
+
+//未
+Settlement系
+SettlementConfirmDTO//そのまま
+
+
+ログイン画面でIdを入力しないため、問題は起きないか？
+
+
+//////////////////////////////////////////////////////////
+//UserId →emailへ変更
+
+emailTest.sql
+struts.xml
+
+
+CartMoveAction
+DestinationCom
+DestinationCon
+LoginAction
+MyPageAction
+PurchaseHis
+ResetUserP
+ResetUserP
+ResetUserP
+SettlementCom
+SettlementCon
+UserCre Com
+
+
+CartDAO
+DestinationDAO
+LoginDAO
+PurchaseHis
+ResetUserP
+SettlementCon
+UserInfo
+
+GoCartDTO
+LoginDTO
+REsetUserDTO
+
+Validation
+
+
+destinationConfirm.jsp
+destinasionCreate.jsp
+home
+login
+resetUserPassComplete
+userCreate
+UserCreateConfirm
+
+cart.css
+
+/////////////////////////////////////////////////////////
